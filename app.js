@@ -1,4 +1,6 @@
 require('dotenv').config();
+require('./configs/mongo');
+require('./configs/passport');
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -8,16 +10,28 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const session      = require('express-session');
+const passport     = require('passport');
 
-
-mongoose
-  .connect('mongodb://localhost/back', {useNewUrlParser: true})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+// session are used for login puroposes
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
   })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+);
+
+
+
+
+
+
+
+//////////////////////////////////////////
+///////////GENERATOR OUTPUT///////////////
+//////////////////////////////////////////
+
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
