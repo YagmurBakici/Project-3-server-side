@@ -34,7 +34,7 @@ const housingSchema = new Schema({
     petFriendly: { type: Boolean }
   },
   lifestyle: {
-    type: string,
+    type: String,
     enum: ["family friendly", "lively", "young but calm"]
   },
   monthlyRent: {

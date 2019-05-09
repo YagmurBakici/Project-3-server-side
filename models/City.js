@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const citySchema = new Schema({
-  city: {
+  name: {
     type: String,
     enum: ["Paris", "Miami", "Seoul"],
     required: true

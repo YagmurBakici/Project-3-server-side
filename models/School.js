@@ -16,7 +16,7 @@ const schoolSchema = new Schema({
     enum: ["private", "public"]
   },
   level: {
-    type: String,
+    type: [String],
     enum: ["preschool", "elementary school", "middle school", "high school"]
   },
   serviceFee: {
