@@ -10,7 +10,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  email: {
+  mail: {
     type: String,
     required: true
   },
@@ -31,7 +31,7 @@ const userSchema = new Schema({
     type: Number,
     required: true
   },
-  subscriptions: [{ type: Schema.Types.ObjectId, ref: "Subscription" }],
+  orders: [{ type: Schema.Types.ObjectId, ref: "Order" }],
   created_at: {
     type: Date,
     required: true,
