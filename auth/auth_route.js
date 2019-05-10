@@ -1,8 +1,8 @@
 const express = require("express");
-const authRoutes = express.Router();
+const authRoute = express.Router();
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
-const User = require("../models/user");
+const User = require("../models/User");
 //////////////////////////////////////////////////////
 ///////////////////DOCS INFOS/////////////////////////
 //////////////////////////////////////////////////////
@@ -15,9 +15,10 @@ const User = require("../models/user");
 //////////////////////////////////////////////////////
 ///////////////////SIGN UP AUTH///////////////////////
 //////////////////////////////////////////////////////
-authRoutes.post("/signup", (req, res) => {
-  const mail = req.body.mail;
-  const password = req.body.password;
+authRoute.post("/signup", (req, res) => {
+  // destructuration de donnée pour prendre toutes les donnée envoyé dansle signup
+  const {firstName, lastName, mail, password} = req.body;
+
   // Conditions de refus de log
   if (!mail || !password) {
     res
@@ -42,14 +43,15 @@ authRoutes.post("/signup", (req, res) => {
     }
     const salt = bcrypt.genSaltSync(6);
     const hashPassword = bcrypt.hashSync(password, salt);
+    // Send database
     const aNewUser = new User({
-      mail: mail,
+      firstName,
+      lastName,
+      mail,
       password: hashPassword,
-      firstName
     });
     aNewUser.save(err => {
       if (err) {
-          console.log(err);
         res.status(400).json({ message: "Saving User database went wrong" });
         return;
       }
@@ -67,7 +69,7 @@ authRoutes.post("/signup", (req, res) => {
 ///////////////////LOGIN AUTH/////////////////////////
 //////////////////////////////////////////////////////
 
-authRoutes.post('/login',(req,res,next)=>{
+authRoute.post('/login',(req,res,next)=>{
     passport.authenticate('local',(err,theUser,failureDetails)=>{
         if(err){
             res.status(500).json({message:"Something went wrong inside the Autithication user"});
@@ -91,7 +93,7 @@ authRoutes.post('/login',(req,res,next)=>{
 ///////////////////LOGOUT AUTH////////////////////////
 //////////////////////////////////////////////////////
 
-authRoutes.post('/logout', (req, res, next) => {
+authRoute.post('/logout', (req, res, next) => {
     req.logout();
     res.status(200).json({ message: 'Log out success!' });
 });
@@ -101,7 +103,7 @@ authRoutes.post('/logout', (req, res, next) => {
 /////////////////LOGGEDIN AUTH////////////////////////
 //////////////////////////////////////////////////////
 
-authRoutes.get('/loggedin', (req, res, next) => {
+authRoute.get('/loggedin', (req, res, next) => {
     if (req.isAuthenticated()) {
         res.status(200).json(req.user);
         return;
@@ -109,4 +111,4 @@ authRoutes.get('/loggedin', (req, res, next) => {
     res.status(403).json({ message: 'Unauthorized' });
 });
 
-module.exports = authRoutes;
+module.exports = authRoute;

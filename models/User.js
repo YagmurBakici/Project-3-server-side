@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -18,25 +19,15 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  role: {
-    type: String,
-    enum: ["user", "admin"],
-    required: true
-  },
   nbAdults: {
     type: Number,
-    required: true
+    default: 0
   },
   nbChildren: {
     type: Number,
-    required: true
+    default: 0
   },
   orders: [{ type: Schema.Types.ObjectId, ref: "Order" }],
-  created_at: {
-    type: Date,
-    required: true,
-    default: Date.now
-  }
 });
 const UserModel = mongoose.model("User", userSchema);
 module.exports = UserModel;

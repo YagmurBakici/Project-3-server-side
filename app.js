@@ -44,7 +44,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"]
+    origin: [process.env.REACT_DOMAIN]
   })
 );
 
@@ -62,6 +62,7 @@ const bankRoute = require("./routes/bank_route"); /////////////////////
 const insuranceRoute = require("./routes/insurance_route"); /////////////////////
 const communicationRoute = require("./routes/communication_route"); /////////////////////
 const orderRoute = require("./routes/order_route"); /////////////////////
+const user = require("./routes/user")
 
 // lorsque je vais à la route /school par exemple, j'utilise les méthodes définies dans mon fichier "communication_route" dans mon dossier "routes"
 app.use("/", index);
@@ -73,5 +74,6 @@ app.use("/bank", bankRoute); /////////////////////
 app.use("/insurance", insuranceRoute); /////////////////////
 app.use("/communication", communicationRoute); /////////////////////
 app.use("/order", orderRoute); /////////////////////
+app.use("/user", user)
 
 module.exports = app;
