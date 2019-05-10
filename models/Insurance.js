@@ -11,7 +11,7 @@ const insuranceSchema = new Schema({
   },
   serviceFee: {
     type: Number,
-    required: true
+    default: 200
   }
 });
 module.exports = mongoose.model("Insurance", insuranceSchema);

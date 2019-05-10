@@ -21,7 +21,7 @@ const schoolSchema = new Schema({
   },
   serviceFee: {
     type: Number,
-    required: true
+    default: 500
   }
 });
 module.exports = mongoose.model("School", schoolSchema);

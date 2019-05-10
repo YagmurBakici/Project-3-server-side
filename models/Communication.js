@@ -11,7 +11,7 @@ const communicationSchema = new Schema({
   },
   serviceFee: {
     type: Number,
-    required: true
+    default: 100
   }
 });
 module.exports = mongoose.model("Communication", communicationSchema);
