@@ -8,6 +8,7 @@ const orderSchema = new Schema({
   bank: { type: Schema.Types.ObjectId, ref: "Bank" },
   insurance: { type: Schema.Types.ObjectId, ref: "Insurance" },
   communication: { type: Schema.Types.ObjectId, ref: "Communication" },
+  arrivalDate: Date,
   totalPrice: Number
 });
 module.exports = mongoose.model("Order", orderSchema);

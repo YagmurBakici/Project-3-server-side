@@ -43,7 +43,7 @@ const housingSchema = new Schema({
   },
   serviceFee: {
     type: Number,
-    required: true
+    default: 1200
   }
 });
 module.exports = mongoose.model("Housing", housingSchema);

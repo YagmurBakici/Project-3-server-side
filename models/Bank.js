@@ -11,7 +11,7 @@ const bankSchema = new Schema({
   },
   serviceFee: {
     type: Number,
-    required: true
+    default: 150
   }
 });
 const Bank = mongoose.model("Bank", bankSchema);
