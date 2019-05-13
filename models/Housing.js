@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const housingSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   description: {
     type: String,
@@ -23,7 +24,7 @@ const housingSchema = new Schema({
   },
   housingType: {
     type: String,
-    enum: ["house", "apartment"]
+    enum: ["house", "apartment", "duplex"]
   },
   amenities: {
     balcony: { type: Boolean },
