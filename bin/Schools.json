@@ -1,0 +1,16 @@
+[
+  {
+    "name": "American school in Paris",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "language": "English",
+    "shcooltype": "private",
+    "Level": ["elementary school", "middle school", "high school"]
+  },
+  {
+    "name": "West Miami middle school",
+    "city": "5cd99c7fea8b0e42229d6f20",
+    "language": "English",
+    "shcooltype": "public",
+    "Level": ["middle school"]
+  }
+]

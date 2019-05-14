@@ -17,5 +17,125 @@
     },
     "lifestyle": "family friendly",
     "monthlyRent": 1500
+  },
+  {
+    "name": "House in Melun",
+    "description": "well, we have it... if you like Brie cheese",
+    "address": "65 rue Dajot, 77000 Melun",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "housingType": "house",
+    "amenities": {
+      "balcony": true,
+      "terrace": true,
+      "garden": true,
+      "parking": true,
+      "handicapAccess": true,
+      "petFriendly": true
+    },
+    "lifestyle": "family friendly",
+    "monthlyRent": 1000,
+    "serviceFee": 1200
+  },
+  {
+    "name": "Duplex Saint-Germain",
+    "description": "Close to Seine River a lot of Fashion stores are here.",
+    "address": "",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "housingType": "apartment",
+    "amenities": {
+      "balcony": true,
+      "terrace": false,
+      "garden": false,
+      "parking": true,
+      "handicapAccess": true,
+      "petFriendly": true
+    },
+    "lifestyle": "young but calm",
+    "monthlyRent": 2000,
+    "serviceFee": 1200
+  },
+  {
+    "name": "lively neighborhood flat",
+    "description": "In le Marais, one of the more village spirited area of Paris, find this well equiped flat",
+    "address": "56 rue du Poitou, 75003 Paris",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "housingType": "apartment",
+    "amenities": {
+      "balcony": true,
+      "terrace": false,
+      "garden": false,
+      "parking": false,
+      "handicapAccess": false,
+      "petFriendly": false
+    },
+    "lifestyle": "lively",
+    "monthlyRent": 800,
+    "serviceFee": 1200
+  },
+  {
+    "name": "Big apartment close to transportation",
+    "description": "In the direct outskirts of Paris, this apartement of 100m² allows a family to settle with fast access to the transportations",
+    "address": "",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "housingType": "apartment",
+    "amenities": {
+      "balcony": false,
+      "terrace": false,
+      "garden": false,
+      "parking": true,
+      "handicapAccess": false,
+      "petFriendly": false
+    },
+    "lifestyle": "lively",
+    "monthlyRent": 1100,
+    "serviceFee": 1200
+  },
+  {
+    "name": "la maison du bonheur",
+    "description": "a splendid house in the center of Paris",
+    "address": "112 rue de Vaugirard, 75012 Paris",
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "housingType": "house",
+    "amenities": {
+      "balcony": false,
+      "terrace": false,
+      "garden": false,
+      "parking": false,
+      "handicapAccess": false,
+      "petFriendly": true
+    },
+    "lifestyle": "family friendly",
+    "monthlyRent": 4000,
+    "serviceFee": 1200
+  },
+  {
+    "name": "Marina Studio",
+    "description": "the miami lifestyle",
+    "address": "2951 S Bayshore Dr, Miami, Florida 33133 ",
+    "city": "5cd99c7fea8b0e42229d6f20",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "housingType": "apartment",
+    "amenities": {
+      "balcony": false,
+      "terrace": false,
+      "garden": false,
+      "parking": false,
+      "handicapAccess": false,
+      "petFriendly": true
+    },
+    "lifestyle": "lively",
+    "monthlyRent": 600,
+    "serviceFee": 1200
   }
 ]

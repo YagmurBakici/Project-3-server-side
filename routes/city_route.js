@@ -13,4 +13,16 @@ router.post("/create", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
+router.get("/", (req, res) => {
+  City.find()
+    .then(dbRes => res.json({ dbRes }))
+    .catch(dbErr => console.log(dbErr));
+});
+
+router.delete("/:id", () => {
+  City.findByIdAndRemove(req.params.id)
+    .then(dbRes => console.log("this city was deleted successfully"))
+    .catch();
+});
+
 module.exports = router;

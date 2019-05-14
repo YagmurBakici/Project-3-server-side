@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const schoolSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   city: { type: Schema.Types.ObjectId, ref: "City" },
   language: {

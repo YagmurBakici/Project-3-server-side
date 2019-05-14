@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 ///////// PUT MODELS/////////////
 const CityModel = require("../models/City.js");
 const HousingModel = require("../models/Housing.js");
+const SchoolModel = require("../models/School.js");
 //////////Require json file aka "fake datas"////////
 const cityData = require("./cities.json");
 const housingData = require("./Housing.json");
+const schoolData = require("./Schools.json");
 
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true })
@@ -18,13 +20,13 @@ mongoose
     console.error("Error connecting to mongo", err);
   });
 
-CityModel.insertMany(cityData)
-  .then(dbRes => {
-    console.log(`${dbRes.length} cities were added to my db`);
-  })
-  .catch(dbErr => {
-    console.log("fail to insert cities to my db");
-  });
+// CityModel.insertMany(cityData)
+//   .then(dbRes => {
+//     console.log(`${dbRes.length} cities were added to my db`);
+//   })
+//   .catch(dbErr => {
+//     console.log("fail to insert cities to my db");
+//   });
 
 HousingModel.insertMany(housingData)
   //   .populate("city")
@@ -32,7 +34,7 @@ HousingModel.insertMany(housingData)
     console.log(`${dbRes.length} houses were added to my db`);
   })
   .catch(dbErr => {
-    console.log("fail to insert houses to my db", err);
+    console.log("fail to insert houses to my db", dbErr);
   });
 
 // housingData.forEach(oneCity => {
@@ -47,3 +49,12 @@ HousingModel.insertMany(housingData)
 //     })
 //     .catch(err => console.log(err, "ffff"));
 // });
+
+// SchoolModel.insertMany(schoolData)
+//   //   .populate("city")
+//   .then(dbRes => {
+//     console.log(`${dbRes.length} schools were added to my db`);
+//   })
+//   .catch(dbErr => {
+//     console.log("fail to insert schools to my db", dbErr);
+//   });
