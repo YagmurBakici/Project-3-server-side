@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Les Gobelins flat",
+    "description": "Hausmanian apartement with lot of charm and space",
+    "address": "5 rue de Vesale, 75013 Paris",
+    "bedrooms": 3,
+    "city": "5cd99c7fea8b0e42229d6f1f",
+    "bathrooms": 2,
+    "housingType": "apartment",
+    "amenities": {
+      "balcony": true,
+      "terrace": false,
+      "garden": false,
+      "parking": true,
+      "handicapAccess": true,
+      "petFriendly": false
+    },
+    "lifestyle": "family friendly",
+    "monthlyRent": 1500
+  }
+]

@@ -5,7 +5,8 @@ const citySchema = new Schema({
   name: {
     type: String,
     enum: ["Paris", "Miami", "Seoul"],
-    required: true
+    required: true,
+    unique: true
   }
 });
 module.exports = mongoose.model("City", citySchema);
