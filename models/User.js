@@ -27,6 +27,11 @@ const userSchema = new Schema({
     type: Number,
     default: 0
   },
+  role: {
+    type:String,
+    default: "user",
+    enum: ["user", "admin"]
+  },
   orders: [{ type: Schema.Types.ObjectId, ref: "Order" }],
 });
 const UserModel = mongoose.model("User", userSchema);
