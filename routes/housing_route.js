@@ -39,6 +39,7 @@ router.post("/create", (req, res, next) => {
 /// rajouté le 14/05 par A
 router.get("/", (req, res) => {
   Housing.find()
+    .populate("city")
     .then(dbRes => res.json(dbRes))
     .catch(dbErr => console.log(dbErr));
 });
