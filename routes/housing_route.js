@@ -4,34 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 router.post("/create", (req, res, next) => {
-  const {
-    name,
-    description,
-    address,
-    city,
-    bedrooms,
-    bathrooms,
-    housingType,
-    amenities,
-    lifestyle,
-    monthlyRent,
-    serviceFee
-  } = req.body;
-  const newHousing = new Housing({
-    name,
-    description,
-    address,
-    city,
-    bedrooms,
-    bathrooms,
-    housingType,
-    amenities,
-    lifestyle,
-    monthlyRent,
-    serviceFee
-  });
-  newHousing
-    .save()
+  Housing.create(req.body)
     .then(() => res.status(200).json({ msg: "housing id saved" }))
     .catch(err => console.log(err));
 });
@@ -45,6 +18,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/paris/houses", (req, res) => {
+  console.log("this inside paris houses");
   Housing.find({ city: "5cd99c7fea8b0e42229d6f1f" })
     .then(dbRes => res.json({ dbRes }))
     .catch(dbErr => console.log(dbErr));
@@ -88,8 +62,8 @@ router.post("/edit/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   Housing.findByIdAndRemove(req.params.id)
-    .then(dbRes => console.log("this house was deleted successfully"))
-    .catch();
+    .then(dbRes => res.status(200).json(dbRes))
+    .catch(dbErr => res.status(401).json(dbErr));
 });
 
 module.exports = router;
